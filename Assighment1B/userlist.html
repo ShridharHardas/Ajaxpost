@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .user-list {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-list h1 {
+      text-align: center;
+    }
+
+    .user-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .user-list li {
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="user-list">
+      <h1>User List</h1>
+      <ul>
+        <script>
+          var users = JSON.parse(localStorage.getItem('users')) || [];
+          users.forEach(function(user) {
+            document.write('<li>Name: ' + user.name + ', Email: ' + user.email + '</li>');
+          });
+        </script>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
